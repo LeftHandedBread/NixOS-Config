@@ -35,9 +35,7 @@
   # };
 
   # Enable the X11 windowing system.
-  services.xserver.enable = true;
-
-
+  # services.xserver.enable = true;
   
 
   # Configure keymap in X11
@@ -70,6 +68,7 @@
       dolphin
       discord
       steam
+      godot_4
     ];
   };
   
@@ -91,6 +90,22 @@
     graphics.enable = true;
   };
 
+  # Fonts
+  fonts.packages = with pkgs; [
+    noto-fonts
+    noto-fonts-cjk-sans
+    noto-fonts-emoji
+    liberation_ttf
+    fira-code
+    fira-code-symbols
+    mplus-outline-fonts.githubRelease
+    dina-font
+    proggyfonts
+    font-awesome
+  ];
+
+
+
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
@@ -98,7 +113,7 @@
     wget
     git
     tmux
-    
+    python311
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
